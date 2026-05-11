@@ -1,0 +1,33 @@
+# Dependencies
+  node_modules/
+  .pnpm-store/
+  .cache/
+
+  # Build outputs
+  dist/
+  build/
+  .next/
+  out/
+
+  # Environment
+  .env
+  .env.local
+  .env.*.local
+
+  # Locks (keep pnpm-lock.yaml for reproducibility if needed)
+  package-lock.json
+  yarn.lock
+
+  # OS
+  .DS_Store
+  Thumbs.db
+
+  # Editor
+  .vscode/
+  .idea/
+
+  # Replit internals
+  .replit
+  .breakpoints
+  replit.nix
+  
