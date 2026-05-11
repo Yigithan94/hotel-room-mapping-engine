@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Hotel Room Mapping Engine"
+version = "1.0.0"
+id = "artifacts/hotel-mapping-admin"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20292
+
+[services.development]
+run = "pnpm --filter @workspace/hotel-mapping-admin run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/hotel-mapping-admin", "run", "build" ]
+publicDir = "artifacts/hotel-mapping-admin/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20292"
+BASE_PATH = "/"
